@@ -21,9 +21,8 @@ function App() {
   const [moves, setMoves] = useState(0);
   const [time, setTime] = useState(0);
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(true); // Modal visibility state
+  const [isModalVisible, setIsModalVisible] = useState(true);
 
-  // Timer effect
   useEffect(() => {
     let timer;
     if (isGameStarted) {
@@ -36,7 +35,7 @@ function App() {
 
   const handleClick = (index) => {
     if (!isGameStarted) {
-      setIsGameStarted(true); // Start the timer on the first click
+      setIsGameStarted(true);
     }
 
     if (selectedIndexes.length === 2) return;
@@ -62,7 +61,7 @@ function App() {
         }, 1000);
       }
       setSelectedIndexes([]);
-      setMoves(prevMoves => prevMoves + 1); // Increment moves
+      setMoves(prevMoves => prevMoves + 1);
     } else {
       setSelectedIndexes(newSelectedIndexes);
     }
@@ -80,7 +79,6 @@ function App() {
     setMoves(0);
     setTime(0);
     setIsGameStarted(false);
-    // No change to modal visibility on restart
   };
 
   const handleStartGame = () => {
@@ -98,7 +96,7 @@ function App() {
     setMoves(0);
     setTime(0);
     setIsGameStarted(false);
-    setIsModalVisible(true); // Show the modal when starting a new game
+    setIsModalVisible(true);
   };
 
   return (
