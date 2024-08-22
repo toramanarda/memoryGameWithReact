@@ -45,7 +45,6 @@
   height: 80px;
   border-radius: 50%;
   font-size: 2rem;
-  /* Emojilerin büyüklüğünü ayarlamak için */
 }
 
 .selected {
@@ -63,7 +62,6 @@
 span {
   visibility: hidden;
   font-size: 2rem;
-  /* Emojilerin boyutunu ayarlamak için */
 }
 
 .gameArea {
