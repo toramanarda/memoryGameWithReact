@@ -1,0 +1,301 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 165px;
+  padding-block: 67px 85px;
+
+  & .gameOptions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & button {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24.8px;
+      text-align: center;
+      border: 0;
+      border-radius: 30px;
+    }
+
+    & button:first-child {
+      background-color: #FDA214;
+      color: #FCFCFC;
+      padding: 13px 29px;
+    }
+
+    & button:last-child {
+      background-color: #DFE7EC;
+      color: #304859;
+      padding: 13px 24px;
+    }
+  }
+}
+
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #304859;
+  padding: 8px;
+  user-select: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 2rem;
+  /* Emojilerin büyüklüğünü ayarlamak için */
+}
+
+.selected {
+  background-color: #BCCED9;
+}
+
+.matched {
+  background-color: #FDA214;
+}
+
+:is(.selected, .matched) span {
+  visibility: visible;
+}
+
+span {
+  visibility: hidden;
+  font-size: 2rem;
+  /* Emojilerin boyutunu ayarlamak için */
+}
+
+.gameArea {
+  width: 572px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  padding-bottom: 105px;
+}
+
+.infermation {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+
+  & h4 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    color: #7191A5;
+  }
+
+  & h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.68px;
+    color: #304859;
+  }
+
+  & .time {
+    background-color: #DFE7EC;
+    display: flex;
+    align-items: center;
+    gap: 105px;
+    padding: 17px 24px;
+    border-radius: 30px;
+  }
+
+  & .moves {
+    background-color: #DFE7EC;
+    display: flex;
+    align-items: center;
+    gap: 117px;
+    padding: 17px 24px;
+    border-radius: 30px;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modalContent h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49.6px;
+  text-align: center;
+  padding-bottom: 30px;
+  color: #7191A5;
+}
+
+.modalContent button {
+  background-color: #FFB84A;
+  color: #FCFCFC;
+  border: none;
+  padding: 16px 183px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39.68px;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media(width >=768px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .modalContent h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49.6px;
+    text-align: center;
+    padding-bottom: 30px;
+    color: #7191A5;
+  }
+
+  .modalContent button {
+    background-color: #FDA214;
+    color: #FCFCFC;
+    border: none;
+    padding: 16px 183px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.68px;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .header {
+    padding-inline: 40px;
+    padding-block: 37px 121px;
+  }
+}
+
+@media(width <=375px) {
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modalContent {
+    background: #fff;
+    width: 327px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .modalContent h1 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    text-align: center;
+    color: #7191A5;
+  }
+
+  .modalContent button {
+    background-color: #FDA214;
+    color: #FCFCFC;
+    border: none;
+    padding: 12px 88px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .header {
+    padding-inline: 40px;
+    padding-block: 37px 121px;
+  }
+
+
+  .header {
+    padding-inline: 24px;
+    justify-content: space-between;
+    padding-bottom: 24px 24px 80px 24px;
+  }
+
+  .gameOptions {
+    & button:last-child {
+      display: none;
+    }
+  }
+
+  .gameArea {
+    width: 326px;
+    margin: 0 auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding-bottom: 102px;
+  }
+
+  .dot {
+    width: 46px;
+    height: 46px;
+  }
+
+  .infermation {
+    & .time {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      border-radius: 10px;
+      padding: 10px 30px;
+    }
+
+    & .moves {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      border-radius: 10px;
+      padding: 10px 30px;
+    }
+  }
+}
